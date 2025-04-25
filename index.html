@@ -10,25 +10,25 @@
     }
     body {
       font-family: 'Verdana', sans-serif;
-      background-color: #fdfdfd;
-      color: #222;
+      background-color: #111;
+      color: #ddd;
       line-height: 1.7;
       max-width: 720px;
       margin: auto;
       padding: 2em;
       transition: background 0.3s, color 0.3s;
     }
-    body.dark-mode {
-      background-color: #111;
-      color: #ddd;
+    body.light-mode {
+      background-color: #fdfdfd;
+      color: #222;
     }
     h1, h2, h3 {
-      color: #003366;
-    }
-    body.dark-mode h1, 
-    body.dark-mode h2, 
-    body.dark-mode h3 {
       color: #aadfff;
+    }
+    body.light-mode h1, 
+    body.light-mode h2, 
+    body.light-mode h3 {
+      color: #003366;
     }
     table {
       width: 100%;
@@ -41,18 +41,18 @@
       text-align: left;
     }
     code {
-      background: #f0f0f0;
+      background: #222;
       padding: 0.2em 0.4em;
       border-radius: 3px;
     }
-    body.dark-mode code {
-      background: #222;
+    body.light-mode code {
+      background: #f0f0f0;
     }
     .section {
       margin-bottom: 2.5em;
     }
     .toggle-btn {
-      background-color: #003366;
+      background-color: #444;
       color: white;
       border: none;
       padding: 0.4em 0.8em;
@@ -60,13 +60,21 @@
       font-size: 0.9em;
       margin-bottom: 1em;
     }
-    body.dark-mode .toggle-btn {
-      background-color: #444;
+    body.light-mode .toggle-btn {
+      background-color: #003366;
     }
   </style>
+  <script>
+    window.onload = () => {
+      document.body.classList.remove('light-mode');
+    };
+    function toggleMode() {
+      document.body.classList.toggle('light-mode');
+    }
+  </script>
 </head>
 <body>
-  <button class="toggle-btn" onclick="document.body.classList.toggle('dark-mode')">Toggle Dark Mode</button>
+  <button class="toggle-btn" onclick="toggleMode()">🌙 Toggle Theme / Переключить Тему</button>
   <h1>Cyrillic in 10 Minutes</h1>
   <p><em>A clear, focused introduction for English readers — now with a touch of retro charm.</em></p>
 
@@ -82,19 +90,20 @@
       <tr><td>О о</td><td>O</td><td>/o/</td></tr>
       <tr><td>Т т</td><td>T</td><td>/t/</td></tr>
     </table>
-    <p><strong>Example:</strong> <code>МОСКВА</code> = Moskva (Moscow)</p>
+    <p><strong>Examples:</strong> <code>МОСКВА</code> = Moskva (Moscow), <code>МЕТРО</code> = Metro</p>
   </div>
 
   <div class="section">
     <h2>🌐 Greek Cousins</h2>
     <p>These letters resemble Greek characters and are easier to remember if you've seen Greek letters before.</p>
     <table>
-      <tr><th>Cyrillic</th><th>Sound</th><th>IPA</th><th>Looks Like</th><th>Example</th></tr>
-      <tr><td>П п</td><td>P</td><td>/p/</td><td>Π (Pi)</td><td><code>ПАРК</code> = Park</td></tr>
-      <tr><td>Л л</td><td>L</td><td>/l/</td><td>Λ (Lambda)</td><td><code>БАЛЕТ</code> = Ballet</td></tr>
-      <tr><td>Н н</td><td>N</td><td>/n/</td><td>Η (Eta)</td><td><code>НОВАЯ</code> = New</td></tr>
-      <tr><td>Ф ф</td><td>F</td><td>/f/</td><td>Φ (Phi)</td><td><code>ФОРМА</code> = Form</td></tr>
+      <tr><th>Cyrillic</th><th>Sound</th><th>IPA</th><th>Looks Like</th></tr>
+      <tr><td>П п</td><td>P</td><td>/p/</td><td>Π (Pi)</td>
+      <tr><td>Л л</td><td>L</td><td>/l/</td><td>Λ (Lambda)</td>
+      <tr><td>Н н</td><td>N</td><td>/n/</td><td>Η (Eta)</td>
+      <tr><td>Ф ф</td><td>F</td><td>/f/</td><td>Φ (Phi)</td>
     </table>
+    <p><strong>Examples:</strong> <code>ПАРК</code> = Park, <code>БАЛЕТ</code> = Ballet, <code>НОВАЯ</code> = New, <code>ФОРМА</code> = Form</p> 
   </div>
 
   <div class="section">
@@ -117,6 +126,7 @@
     <p>These are new shapes and sounds, but don’t worry — they’re easy to spot once you’ve seen them.</p>
     <table>
       <tr><th>Cyrillic</th><th>Sound</th><th>IPA</th><th>Mnemonic</th></tr>
+      <tr><td>Б б</td><td>B</td><td>/b/</td><td>Square 6</td></tr>
       <tr><td>Д д</td><td>D</td><td>/d/</td><td>Looks like a tent or arch</td></tr>
       <tr><td>З з</td><td>Z</td><td>/z/</td><td>Looks like the number 3</td></tr>
       <tr><td>Й й</td><td>Y (as in “boy”)</td><td>/j/</td><td>Short И</td></tr>
@@ -151,6 +161,7 @@
       <li><code>СИБИРЬ</code> = Sibir’ (Siberia)</li>
       <li><code>ГАГАРИН</code> = Gagarin</li>
       <li><code>ПРОФЕССОР</code> = Professor</li>
+      <li><code>ДРУГ</code> = Friend</li>
     </ul>
   </div>
 
