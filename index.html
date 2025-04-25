@@ -5,17 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cyrillic in 10 Minutes</title>
   <style>
+    :root {
+      font-size: 18px;
+    }
     body {
-      font-family: sans-serif;
+      font-family: 'Verdana', sans-serif;
       background-color: #fdfdfd;
       color: #222;
-      line-height: 1.6;
-      max-width: 700px;
+      line-height: 1.7;
+      max-width: 720px;
       margin: auto;
       padding: 2em;
+      transition: background 0.3s, color 0.3s;
+    }
+    body.dark-mode {
+      background-color: #111;
+      color: #ddd;
     }
     h1, h2, h3 {
-      color: #333;
+      color: #003366;
+    }
+    body.dark-mode h1, 
+    body.dark-mode h2, 
+    body.dark-mode h3 {
+      color: #aadfff;
     }
     table {
       width: 100%;
@@ -23,23 +36,39 @@
       margin: 1em 0;
     }
     th, td {
-      border: 1px solid #ccc;
-      padding: 0.5em;
+      border: 1px solid #999;
+      padding: 0.6em;
       text-align: left;
     }
-    .section {
-      margin-bottom: 2em;
-    }
     code {
-      background: #eee;
+      background: #f0f0f0;
       padding: 0.2em 0.4em;
       border-radius: 3px;
+    }
+    body.dark-mode code {
+      background: #222;
+    }
+    .section {
+      margin-bottom: 2.5em;
+    }
+    .toggle-btn {
+      background-color: #003366;
+      color: white;
+      border: none;
+      padding: 0.4em 0.8em;
+      cursor: pointer;
+      font-size: 0.9em;
+      margin-bottom: 1em;
+    }
+    body.dark-mode .toggle-btn {
+      background-color: #444;
     }
   </style>
 </head>
 <body>
+  <button class="toggle-btn" onclick="document.body.classList.toggle('dark-mode')">Toggle Dark Mode</button>
   <h1>Cyrillic in 10 Minutes</h1>
-  <p><em>A clear, focused introduction for English readers</em></p>
+  <p><em>A clear, focused introduction for English readers — now with a touch of retro charm.</em></p>
 
   <div class="section">
     <h2>🟢 Familiar Friends</h2>
@@ -57,16 +86,28 @@
   </div>
 
   <div class="section">
+    <h2>🌐 Greek Cousins</h2>
+    <p>These letters resemble Greek characters and are easier to remember if you've seen Greek letters before.</p>
+    <table>
+      <tr><th>Cyrillic</th><th>Sound</th><th>IPA</th><th>Looks Like</th><th>Example</th></tr>
+      <tr><td>П п</td><td>P</td><td>/p/</td><td>Π (Pi)</td><td><code>ПАРК</code> = Park</td></tr>
+      <tr><td>Л л</td><td>L</td><td>/l/</td><td>Λ (Lambda)</td><td><code>БАЛЕТ</code> = Ballet</td></tr>
+      <tr><td>Н н</td><td>N</td><td>/n/</td><td>Η (Eta)</td><td><code>НОВАЯ</code> = New</td></tr>
+      <tr><td>Ф ф</td><td>F</td><td>/f/</td><td>Φ (Phi)</td><td><code>ФОРМА</code> = Form</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
     <h2>🟡 Lookalike Tricksters</h2>
-    <p>These look familiar, but sound different. You’ll get used to them quickly.</p>
+    <p>These look familiar, but sound different. You'll get used to them quickly.</p>
     <table>
       <tr><th>Cyrillic</th><th>Sounds Like</th><th>IPA</th></tr>
       <tr><td>В в</td><td>V</td><td>/v/</td></tr>
-      <tr><td>Н н</td><td>N</td><td>/n/</td></tr>
-      <tr><td>Р р</td><td>R (rolled)</td><td>/r/</td></tr>
       <tr><td>С с</td><td>S</td><td>/s/</td></tr>
       <tr><td>У у</td><td>OO (as in "food")</td><td>/u/</td></tr>
+      <tr><td>Р р</td><td>R (rolled)</td><td>/r/</td></tr>
       <tr><td>Х х</td><td>KH (loch, Bach)</td><td>/x/</td></tr>
+      <tr><td>И и</td><td>EE (as in "see")</td><td>/i/</td></tr>
     </table>
     <p><strong>Examples:</strong> <code>СУПЕР</code> = Super, <code>УРАЛ</code> = Ural</p>
   </div>
@@ -77,15 +118,30 @@
     <table>
       <tr><th>Cyrillic</th><th>Sound</th><th>IPA</th><th>Mnemonic</th></tr>
       <tr><td>Д д</td><td>D</td><td>/d/</td><td>Looks like a tent or arch</td></tr>
-      <tr><td>Л л</td><td>L</td><td>/l/</td><td>Like an upside-down V</td></tr>
-      <tr><td>З з</td><td>Z</td><td>/z/</td><td>Backward 3</td></tr>
+      <tr><td>З з</td><td>Z</td><td>/z/</td><td>Looks like the number 3</td></tr>
       <tr><td>Й й</td><td>Y (as in “boy”)</td><td>/j/</td><td>Short И</td></tr>
       <tr><td>Ж ж</td><td>ZH (“treasure”)</td><td>/ʐ/, /ʒ/</td><td>Buzzing sound</td></tr>
-      <tr><td>Э э</td><td>E (“bed”)</td><td>/ɛ/</td><td>Reversed 3</td></tr>
+      <tr><td>Э э</td><td>E (“bed”)</td><td>/ɛ/</td><td>Curvy 3</td></tr>
       <tr><td>Ю ю</td><td>YOU</td><td>/ju/</td><td>Think И + О</td></tr>
       <tr><td>Я я</td><td>YA</td><td>/ja/</td><td>Flipped R</td></tr>
     </table>
-    <p><strong>Examples:</strong> <code>БАЛЕТ</code> = Balet (Ballet), <code>КАФЕ</code> = Kafe (Cafe)</p>
+    <p><strong>Examples:</strong> <code>КАФЕ</code> = Kafe (Cafe), <code>ДЕТИ</code> = Deti (Children)</p>
+  </div>
+
+  <div class="section">
+    <h2>🧬 Extra Strange Letters</h2>
+    <p>These are rarely used but good to recognize. Some look like symbols or unusual characters.</p>
+    <table>
+      <tr><th>Cyrillic</th><th>Sound</th><th>IPA</th><th>Notes</th></tr>
+      <tr><td>Ы ы</td><td>Hard I</td><td>/ɨ/</td><td>Unique to Russian, deep i</td></tr>
+      <tr><td>Ш ш</td><td>SH</td><td>/ʃ/</td><td>Like “sh”</td></tr>
+      <tr><td>Щ щ</td><td>SHCH</td><td>/ɕː/</td><td>Like a double “sh”</td></tr>
+      <tr><td>Ц ц</td><td>TS</td><td>/ts/</td><td>Like “tsar” or “cats”</td></tr>
+      <tr><td>Ч ч</td><td>CH</td><td>/tʃ/</td><td>As in “church”</td></tr>
+      <tr><td>Ъ ъ</td><td>Hard Sign</td><td>–</td><td>No sound, blocks palatalization</td></tr>
+      <tr><td>Ь ь</td><td>Soft Sign</td><td>–</td><td>No sound, softens the previous consonant</td></tr>
+    </table>
+    <p><strong>Example:</strong> <code>БОРЩ</code> = Borshch (Beet soup)</p>
   </div>
 
   <div class="section">
@@ -94,9 +150,10 @@
       <li><code>СПУТНИК</code> = Sputnik</li>
       <li><code>СИБИРЬ</code> = Sibir’ (Siberia)</li>
       <li><code>ГАГАРИН</code> = Gagarin</li>
+      <li><code>ПРОФЕССОР</code> = Professor</li>
     </ul>
   </div>
 
-  <p><em>You now have everything you need to start reading signs, names, and labels in Cyrillic. Keep it simple. Come back often. Let the patterns settle in.</em></p>
+  <p><em>You now have everything you need to start reading signs, names, and labels in Cyrillic.</em></p>
 </body>
 </html>
